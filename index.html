@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="icon" type="image/x-icon" href="monur.ico">
+</head>
+
+<body style="background-color: white;">
+   <div class="center noMargin" style="background-color: #01013F; padding-bottom: 1.5%;">
+      <img src="logo.jpg" width="40%">
+      <div style="display: flex; align-items: center; justify-content: center;">
+         <img src="logoInstagram.png" width="1%" style="margin-right: 8px;">
+         <a class="tnr" style="font-size: 120%; display: inline; color: white;" target="_blank"
+            href="https://www.instagram.com/monur.2025/">Instagram</a>
+      </div>
+   </div>
+   <main>
+      <div class="mediumWindow tnr text center"
+         style="background-color: #e8e8e8; padding-top: 0.1%; margin-top: 1%;margin-bottom: 0%;">
+         <h1 style="margin-top:5%;font-style: italic;">Inscripciones</h1>
+         <br><br>
+         <form id="inscription">
+            <p style="font-size: 150%; font-weight: 500;">Tipo de Inscripcción</p>
+            <select id="formType">
+               <option>
+                  Delegacion
+               </option>
+               <option>
+                  Independiente
+               </option>
+            </select>
+            <br>
+            <br>
+            <input type="hidden" id="formTypeHidden" name="Tipo de Inscripción" value="delegación">
+            <label for="email">Correo electrónico</label>
+            <input class="largeTextInput" type="text" id="email" name="email" required>
+            <br><br>
+            <label id="labelDname" for="dname">Nombre de la delegación</label>
+            <input class="largeTextInput" type="text" id="dname" name="Delegacion" required>
+            <br><br>
+            <div id="facultyForm">
+               <div id="facultyDiv">
+                  <label>Cantidad de Faculties</label>
+                  <br>
+                  <h2 id="facultyNumberOutput">1</h2>
+                  <div style="display: flex; margin-left: 35%;margin-right: 35%; justify-content:space-evenly;">
+                     <button type="button" id="facultyMore" class="delegateButton">+</button>
+                     <button type="button" id="facultyLess" class="delegateButton">-</button>
+                  </div>
+                  <br>
+                  <!-- DIV that will repeat -->
+                  <div>
+                     <label>Nombre de Faculty 1</label>
+                     <input id="firstFacultyName" class="largeTextInput" type="text" required>
+                     <br>
+                     <label>Contacto de Faculty 1</label>
+                     <input id="firstFacultyNumber" class="largeTextInput" type="text" required>
+                  </div>
+                  <!-- DIV that will repeat -->
+               </div>
+               <div>
+                  <textarea class="hidden" id="fname" name="Faculties" rows="3"></textarea>
+                  <textarea class="hidden" id="fcontact" name="Contacto" rows="3"></textarea>
+               </div>
+            </div>
+            <br><br>
+            <h2 id="avisoDelegacion" style="font-size: 200%">Si no tiene claro el nombre del Delegado, preferiblemente ponga "Por asignar", para así estar al tanto de esto mismo. Igualmente, para cualquier cambio o clarificación, contáctenos a través de nuestro <a target="_blank" href="https://www.instagram.com/monur.2025/">Instagram</a>.</h2>
+            <br><br>
+            <h2 style="font-size: 200%" id="comitesLabel">Cargando comités...</h2>
+            <img id="loadingGif" src="loader.gif" width="5%">
+            <div id="comitesDiv">
+            </div>
+            <br>
+            <br>
+            <br>
+            <label>Cantidad de cupos</label><br>
+            <input id="cantidadCuposOutput" class="numberSelector" name="Cantidad de Cupos en Total" type="text"
+               value="1" readonly>
+            <br><br>
+            <h2 id="totalOutput" style="margin:0%; color: red;">Total: 5€</h2>
+            <input id="priceSentToSheet" name="Monto Total" class="hidden" value="5€">
+            <br><br>
+            <h2>Método de pago</h2>
+            <div style="display: flex; align-items: center; margin: 0 auto; justify-content: space-evenly;">
+               <div>
+                  <label for="payment">Pago Movil</label>
+                  <input id="option1" class="radioButton buttonOff" value="Pago Movil" type="radio"
+                     name="Metodo de pago" required>
+               </div>
+               <div>
+                  <label for="payment">Efectivo</label>
+                  <input id="option2" class="radioButton buttonOff" value="Efectivo" type="radio" name="Metodo de pago">
+               </div>
+               <div>
+                  <label for="payment">Zelle</label>
+                  <input id="option3" class="radioButton buttonOff" value="Zelle" type="radio" name="Metodo de pago">
+               </div>
+            </div>
+            <div id="pagoMovilWindow" class="hidden">
+               <h2>Andres<br>
+                  31352122<br>
+                  Bancaribe<br>
+                  0414-4977323<br>
+               </h2>
+            </div>
+            <div>
+               <h2 id="dupeError" style="color: red" class="hidden">No le puedes asignar el mismo cargo a 2 personas
+                  diferentes!</h2>
+            </div>
+            <br><br>
+            <input class="blueButton" type="submit" value="Enviar" name="submitButton" id="submitButton"
+               style="font-size: 120%;">
+            <br><br>
+      </div>
+      </form>
+      </div>
+   </main>
+   <script src="inscriptionScript.js"></script>
+</body>
+
+</html>
